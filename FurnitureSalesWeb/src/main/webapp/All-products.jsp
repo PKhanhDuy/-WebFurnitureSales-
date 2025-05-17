@@ -18,10 +18,81 @@
     <script src="${pageContext.request.contextPath}/public/js/curtainmenu.js"></script>
     <script src="${pageContext.request.contextPath}/public/js/Cart.js"></script>
     <title>Tất cả sản phẩm</title>
+    <style>
+        /* Kiểu thông báo */
+        .notification {
+            position: fixed;
+            top: 140px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            /* Màu xanh lá biểu thị thành công */
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
 
+        /* Ẩn thông báo */
+        .hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+        }
+
+        .remove-item {
+            border: none;
+            background-color: white;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .scroll-cart {
+            max-height: 65%;
+            height: 65% !important;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 10px;
+        }
+
+        .cart-actions {
+            position: sticky;
+            /* Giữ cố định trong container */
+            height: 150px !important;
+            bottom: 0;
+            /* Đặt vị trí tại đáy của container */
+            background-color: #fff;
+            /* Nền trắng để nổi bật */
+            padding: 10px;
+            z-index: 10;
+            /* Đảm bảo không bị che bởi phần khác */
+        }
+
+        .watch-cart,
+        .check-out {
+            padding: 5px 20px;
+            margin-bottom: 10px;
+        }
+
+        #p-pagination button.page-link {
+            background-color: white;
+            color: black;
+        }
+
+        .disabled {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
+
+
     <!-- HEADER -->
     <div id="container">
         <div id="notification" class="notification hidden">Sản phẩm đã được thêm vào giỏ hàng!</div>
@@ -140,8 +211,98 @@
                 </div>
             </div>
         </div>
+        <!-- PAGINATION -->
+        <div id="p-pagination">
+            <div class="p-pagination-box">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center"
+                        style="--bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(21, 21, 22, 0.25);">
+                        <!-- Trang hiện tại -->
+                        <%-- <li class="page-item active" aria-current="page">--%>
+                            <%-- <span class="page-link" --%>
+                                <%-- style="background-color: black; font-weight: bold; border-color: black;">1</span>--%>
+                                    <%-- </li>--%>
 
+                                        <c:if test="${currentPage > 1}">
+                                            <li class="page-item">
+                                                <a class="page-link" href="list-product?page=${currentPage - 1}">«
+                                                    Trước</a>
+                                            </li>
+                                        </c:if>
+                                        <c:forEach begin="1" end="${totalPages}" var="page">
+                                            <!-- Các trang lân cận -->
+                                            <li class="page-item"><a
+                                                    class="page-link ${page == currentPage ? 'active' : ''}"
+                                                    href="list-product?page=${page}">${page}</a></li>
+                                        </c:forEach>
+
+                                        <c:if test="${currentPage < totalPages}">
+                                            <%-- <a href="products?page=${currentPage + 1}">Tiếp »</a>--%>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="list-product?page=${currentPage + 1}"
+                                                        aria-label="Next">
+                                                        <span aria-hidden="true">Tiếp »</span>
+                                                    </a>
+                                                </li>
+
+                                        </c:if>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
+
+
+
+    <!-- FOOTER -->
+    <!-- <iframe src="../../common/footer.html" frameborder="0" class="footer"></iframe> -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left Column -->
+            <div class="footer-column">
+                <h3>KẾT NỐI VỚI KANE'S</h3>
+                <img src="../../../public/images/logos/logo3.png" alt=" Logo" class="footer-logo">
+                <p>FOLLOW US</p>
+                <p>Instagram – Youtube – Facebook</p>
+                <button class="footer-button">HỆ THỐNG CỬA HÀNG</button>
+            </div>
+
+            <!-- Second Column -->
+            <div class="footer-column">
+                <h3 style="justify-content: center;">KANE'S</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Chuyện KANE'S</a></li>
+                    <li><a href="#">Tổng công ty</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Thẻ hội viên</a></li>
+                    <li><a href="#">Đổi trả hàng</a></li>
+                </ul>
+            </div>
+
+            <!-- Third Column -->
+            <div class="footer-column">
+                <h3>CẢM HỨNG</h3>
+                <ul>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Ý tưởng và cảm hứng</a></li>
+                </ul>
+            </div>
+
+            <!-- Fourth Column -->
+            <div class="footer-column">
+                <h3>NEWSLETTER</h3>
+                <p>Hãy để lại email của bạn để nhận được những ý tưởng trang trí mới và thông tin ưu đãi từ KANE'S</p>
+                <p>Email: kanescare@akacompany.com.vn</p>
+                <p>Hotline: 18007200</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Nhập email của bạn">
+                    <button class="subscribe-button">ĐĂNG KÝ</button>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 
 </body>
 

@@ -92,6 +92,94 @@
 
 <body>
 
+    <div class="container-hd">
+        <header>
+            <div class="header-top-hd">
+                <div class="language-switcher-hd">
+                    <a href="#">EN</a> | <a href="#"><Strong>VN</Strong></a>
+                </div>
+                <div class="contact-info-hd">
+                    <div class="phone-hd">
+                        <a class="fas fa-regular fa-phone"></a>
+                    </div>
+                    <a href="">0906 904 114</a>
+                    <div class="about-hd">
+                        <a href="">Giới thiệu</a>
+                        <a href="#">Khuyến mãi </a>
+                    </div>
+                </div>
+                <div class="header-icons-hd">
+                    <a href="#" class="fas fa-map-marker-alt"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-shopping-cart" onclick="showCart()"></a>
+                    <a href="${pageContext.request.contextPath}/profile" class="fas fa-light fa-user"></a>
+                    <h4 style="font-weight: lighter; margin-left: -15px; font-size: large; margin-top: 10px;">
+                        <c:if test="${sessionScope.auth != null}">
+                            <a href="${pageContext.request.contextPath}/profile">
+                                ${sessionScope.auth.username}
+                            </a>
+                        </c:if>
+                        <c:if test="${sessionScope.auth == null}">
+                            <a href="${pageContext.request.contextPath}/login">Đăng nhập</a>
+                        </c:if>
+                    </h4>
+                </div>
+            </div>
+            <!-- create mobile menu -->
+            <div id="background-trans" hidden class="mfp-bg mfp-ready"></div>
+            <div class="header-bottom-hd">
+                <div class="logo-hd">
+                    <a href="${pageContext.request.contextPath}/kenes"><img
+                            src="${pageContext.request.contextPath}/public/images/logos/logo3.png" alt="Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a style="color: black; border: none;" class="btn dropdown-toggle"
+                        href="${pageContext.request.contextPath}/list-product">SẢN PHẨM</a>
+                    <ul class="dropdown-menu">
+                        <div class="row" id="row-873750177">
+                            <c:forEach var="cates" items="${mapCate}">
+                                <div class="col medium-2 small-6 large-2">
+                                    <div class="col-inner">
+                                        <div class="ux-menu stack stack-col justify-start">
+                                            <%--cates.value là danh sách các danh mục trong map--%>
+                                                <c:forEach var="c" items="${cates.value}">
+                                                    <div class="ux-menu-link flex menu-item">
+                                                        <a class="ux-menu-link__link flex"
+                                                            href="products?cateID=${c.id}">
+                                                            <span class="ux-menu-link__text">
+                                                                ${c.cateName} </span>
+                                                        </a>
+                                                    </div>
+                                                </c:forEach>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </ul>
+                    <a style="margin-top: 5px;" href="#">PHÒNG</a>
+                    <a style="margin-top: 5px;" href="#">BỘ SƯU TẬP</a>
+                </nav>
+                <form action="/search" method="get">
+                    <div class="search-bar-hd">
+                        <input id="search-input" name="search-input" type="text" placeholder="Tìm sản phẩm">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <script>
+                    function getValue() {
+                        const searchInput = document.getElementById("search-input");
+                        const inputValue = searchInput.value;
+                        console.log("Giá trị tìm kiếm:", inputValue);
+                    }
+                </script>
+            </div>
+        </header>
+    </div>
 
     <!-- HEADER -->
     <div id="container">
@@ -251,7 +339,6 @@
             </div>
         </div>
     </div>
-
 
 
     <!-- FOOTER -->

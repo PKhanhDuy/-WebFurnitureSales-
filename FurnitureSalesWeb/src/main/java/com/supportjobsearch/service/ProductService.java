@@ -67,6 +67,14 @@ public class ProductService extends ServiceBase {
         return productDao.get4ProductOfCate(cateID);
     }
 
+    public List<Product> getSearch(String name) {
+        return productDao.search(name);
+    }
+    // Bước 6.4: Lấy danh sách sản phẩm phù hợp với từ khóa
+    public List<Product> getSearchProduct(String name) {
+        return productDao.searchProduct(name);
+    }
+
     public List<ProductDto> getAllProductsDto() {
         try {
             var j = productDao.getJdbi();

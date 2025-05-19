@@ -90,7 +90,19 @@ public class ProductDao extends ImplementBase implements IProductDAO {
                 .mapToBean(Product.class).list());
     }
 
-
+    @Override
+    public List<Product> search(String name) {
+        return handle.createQuery("SELECT p.id, p .proName, p.description, p.price, p.thumb FROM products AS p JOIN product_atribute AS pa ON p.atributeID = pa.id WHERE pa.material LIKE :name")
+                .bind("name", "%" + name + "%")
+                .mapToBean(Product.class).list();
+    }
+    // 6.4 Truy vấn lấy kết quả tìm kiếm phù hợp
+    @Override
+    public List<Product> searchProduct(String name) {
+        return db.getJdbi().withHandle(handle1 -> handle.createQuery("SELECT * FROM products WHERE proName LIKE :name")
+                .bind("name", "%" + name + "%")
+                .mapToBean(Product.class).list());
+    }
 
     @Override
     public List<Product> get4NewProducts() {

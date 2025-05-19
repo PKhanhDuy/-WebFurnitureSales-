@@ -67,6 +67,58 @@ public class ProductService extends ServiceBase {
         return productDao.get4ProductOfCate(cateID);
     }
 
+    public List<ProductDto> getAllProductsDto() {
+        try {
+            var j = productDao.getJdbi();
+            j.installPlugin(new SqlObjectPlugin());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return productDao.getJdbi().withExtension(IProductDTO.class, IProductDTO::getAllProducts);
+    }
+
+    public List<JSONObject> convertToJson(List<ProductDto> products) {
+        List<JSONObject> li = new ArrayList<>();
+
+        NumberFormat formater = NumberFormat.getInstance(Locale.ENGLISH);
+
+
+        products.forEach(p -> {
+            JSONObject j = new JSONObject();
+            JSONObject product = new JSONObject();
+            product.put("id", p.getId());
+            product.put("name", p.getName());
+            var fullPrice = formater.format(p.getPrice());
+            product.put("price", fullPrice);
+            product.put("thumb", p.getThumb());
+            product.put("stock", p.getStock());
+            product.put("category", p.getCategory());
+            product.put("averageRating", p.getAverageRating());
+            product.put("totalReviews", p.getTotalReviews());
+            li.add(product);
+        });
+
+        return li;
+    }
+
+    public List<Product> getProductByFilter(String sort, String material) {
+        return productDao.getProductByFilter(sort, material);
+    }
+
+    public Product getProductByName(String productName) {
+        log.info("ProductService getProductByName...");
+
+        Product p = null;
+        try {
+            p = productDao.getProductByName(productName);
+        }
+        catch (ProductNotFoundException e){
+            return null;
+        }
+
+        return p;
+    }
+
     public ProductAttribute addProductAttribute(ProductAttribute pa){
         log.info("ProductService addProductAttribute...");
         return paDao.addAttribute(pa);

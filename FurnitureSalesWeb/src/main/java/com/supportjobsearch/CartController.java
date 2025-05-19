@@ -78,7 +78,7 @@ public class CartController extends HttpServlet {
         // Nhận dữ liệu từ AJAX
         String json = req.getReader().lines().reduce("", (accumulator, actual) -> accumulator + actual);
         Gson gson = new Gson();
-        CartProduct newItem = gson.fromJson(json, CartProduct.class);
+        CartItem newItem = gson.fromJson(json, CartItem.class);
 
         double total = 0;
         if (u != null) {
@@ -88,7 +88,7 @@ public class CartController extends HttpServlet {
                 cart.remove(newItem.getId());
             } else if ("plus".equals(action)) {
                 // Kiểm tra sản phẩm có tồn tại trong giỏ chưa
-                for (CartProduct item : cart.getList()) {
+                for (CartItem item : cart.getListCartItem()) {
                     if (item.getId() == (newItem.getId())) {
 //                       8.3.7. doPost()  -update lại số lượng của sản phẩm
                         cart.update(item.getId(), item.getQuantity() - 1);
@@ -99,7 +99,7 @@ public class CartController extends HttpServlet {
             } else {
                 // Kiểm tra sản phẩm có tồn tại trong giỏ chưa
                 boolean exists = false;
-                for (CartProduct item : cart.getList()) {
+                for (CartItem item : cart.getListCartItem()) {
                     if (item.getId() == (newItem.getId())) {
                         int t = warehouseService.getAmountProductInWarehouse(item.getId());
                         int h = item.getQuantity() + 1;
@@ -133,17 +133,17 @@ public class CartController extends HttpServlet {
     }
 
     private static class CartResponse {
-        private final List<CartProduct> lists;
+        private final List<CartItem> lists;
         private final double totalPrice;
         private final String userName;
 
-        public CartResponse(List<CartProduct> lists, double totalPrice, String userName) {
+        public CartResponse(List<CartItem> lists, double totalPrice, String userName) {
             this.lists = lists;
             this.totalPrice = totalPrice;
             this.userName = userName;
         }
 
-        public List<CartProduct> getLists() {
+        public List<CartItem> getLists() {
             return lists;
         }
 

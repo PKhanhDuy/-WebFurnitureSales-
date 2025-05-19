@@ -93,6 +93,53 @@ public class ProductDao extends ImplementBase implements IProductDAO {
 
 
     @Override
+    public List<Product> get4NewProducts() {
+        db = JDBIConnect.getInstance();
+        return db.getJdbi().withHandle(handle ->
+                handle.createQuery("select * from products limit 4")
+                        .mapToBean(Product.class).list());
+    }
+
+    @Override
+    public List<Product> getProductByFilter(ProductFilter filter) {
+        return List.of();
+    }
+
+    public List<Product> get4ProductOfCate(int cateID) {
+        return db.jdbi.withHandle(handle -> handle.createQuery("select * from products where cateID = :cateID limit 4")
+                .bind("cateID", cateID)
+                .mapToBean(Product.class).list());
+    }
+
+
+    @Override
+    public List<Product> getProductByFilter(String sort, String material) {
+        String query = "select p.id, p.proName,p.price,p.description, p.thumb,p.created_at,p.cateID,p.atributeID " +
+                "from products p join product_atribute pa on p.atributeID = pa.id ";
+
+        if ("Tất cả".equals(material)) {
+            query += "where 1=1 or pa.material like ?";
+        } else {
+            query += "where pa.material like ? ";
+        }
+        // Thêm điều kiện sắp xếp
+        if ("Thấp đến cao".equals(sort)) {
+            query += "order by p.price asc;";
+        } else if ("Cao đến thấp".equals(sort)) {
+            query += "order by p.price desc;";
+        } else if ("Mới nhất".equals(sort)) {
+            query += "order by p.created_at desc;";
+        } else {
+            query += "order by p.id asc;"; // Sắp xếp mặc định
+        }
+
+        String finalQuery = query;
+        return db.jdbi.withHandle(handle -> handle.createQuery(finalQuery)
+                .bind(0, '%' + material + '%')
+                .mapToBean(Product.class).list());
+    }
+
+    @Override
     public Product getProductByName(String productName) throws ProductNotFoundException {
         log.info("Querying product by name: " + productName);
         Product p = null;

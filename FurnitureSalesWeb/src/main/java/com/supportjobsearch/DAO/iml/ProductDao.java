@@ -82,7 +82,32 @@ public class ProductDao extends ImplementBase implements IProductDAO {
         return null;
     }
 
+    @Override
+    public List<Product> getProductByCategory(int cateID) {
+        db = JDBIConnect.getInstance();
+        return db.jdbi.withHandle(handle -> handle.createQuery("select * from products where cateID = :cateID")
+                .bind("cateID", cateID)
+                .mapToBean(Product.class).list());
+    }
 
+
+
+    @Override
+    public Product getProductByName(String productName) throws ProductNotFoundException {
+        log.info("Querying product by name: " + productName);
+        Product p = null;
+
+        try {
+            p = handle.createQuery("SELECT * FROM products WHERE proName = ?")
+                    .bind(0, productName)
+                    .mapToBean(Product.class).first();
+        }
+        catch (IllegalStateException e) {
+            throw new ProductNotFoundException("Product not exits");
+        }
+
+        return p;
+    }
 
     @Override
     public boolean updateProduct(Product p) {

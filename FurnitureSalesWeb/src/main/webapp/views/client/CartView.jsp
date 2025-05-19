@@ -1,4 +1,4 @@
-<%@ page import="com.example.ecommerce.Bean.Cart.Cart" %><%--
+<%@ page import="com.supportjobsearch.Cart" %><%--
   Created by IntelliJ IDEA.
   User: KhanhDuy
   Date: 12/14/2024

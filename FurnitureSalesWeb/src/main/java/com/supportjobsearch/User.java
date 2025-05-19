@@ -1,8 +1,8 @@
 package com.supportjobsearch;
 
-import com.example.ecommerce.Common.Enum.Gender;
-import com.example.ecommerce.Common.Enum.StatusUser;
-import com.example.ecommerce.InsertData;
+import com.supportjobsearch.enums.Gender;
+import com.supportjobsearch.enums.StatusUser;
+import com.supportjobsearch.InsertData;
 
 import java.io.Serializable;
 import java.sql.Connection;

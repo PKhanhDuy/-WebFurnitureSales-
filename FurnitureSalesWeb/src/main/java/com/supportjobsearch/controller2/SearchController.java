@@ -1,11 +1,5 @@
-package com.example.ecommerce.controller2;
+package com.supportjobsearch.controller2;
 
-import com.example.ecommerce.Bean.Cart.Cart;
-import com.example.ecommerce.Bean.Category;
-import com.example.ecommerce.Bean.Product;
-import com.example.ecommerce.DAO.iml.ProductDao;
-import com.example.ecommerce.service.CategoryService;
-import com.example.ecommerce.service.ProductService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

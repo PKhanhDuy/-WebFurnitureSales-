@@ -1,5 +1,9 @@
 package com.supportjobsearch.controller2;
 
+import com.supportjobsearch.Category;
+import com.supportjobsearch.Product;
+import com.supportjobsearch.service.CategoryService;
+import com.supportjobsearch.service.ProductService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

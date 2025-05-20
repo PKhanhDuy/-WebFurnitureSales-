@@ -1,7 +1,11 @@
 package com.supportjobsearch.service;
 
+import com.supportjobsearch.Bean.ProductAttribute;
 import com.supportjobsearch.DAO.iml.ProductDao;
+import com.supportjobsearch.DAO.iml.ProductAttributeDao;
+import com.supportjobsearch.DAO.interf.IProductDTO;
 import com.supportjobsearch.Product;
+import com.supportjobsearch.dto.ProductDto;
 import com.supportjobsearch.service.ServiceBase;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import org.json.JSONObject;
@@ -116,7 +120,7 @@ public class ProductService extends ServiceBase {
         try {
             p = productDao.getProductByName(productName);
         }
-        catch (ProductNotFoundException e){
+        catch (Exception e){
             return null;
         }
 

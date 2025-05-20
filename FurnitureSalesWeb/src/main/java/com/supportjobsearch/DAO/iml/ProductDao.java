@@ -1,12 +1,8 @@
-package com.example.ecommerce.DAO.iml;
+package com.supportjobsearch.DAO.iml;
 
-import com.example.ecommerce.Bean.Product;
-import com.example.ecommerce.Common.Enum.ProductFilter;
-import com.example.ecommerce.Common.Exception.ProductNotFoundException;
-import com.example.ecommerce.DAO.interf.IProductDAO;
-import com.example.ecommerce.Database.JDBIConnect;
-import com.example.ecommerce.Dto.ProductDto;
-import org.jdbi.v3.core.Handle;
+
+import com.supportjobsearch.DAO.interf.IProductDAO;
+import com.supportjobsearch.Product;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.ResultSet;

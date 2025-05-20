@@ -19,7 +19,7 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Lay du lieu category de hien thi len giao dien
-        ProductService service = new ProductService();
+
         CategoryService cateService = new CategoryService();
 
         List<Product> data;

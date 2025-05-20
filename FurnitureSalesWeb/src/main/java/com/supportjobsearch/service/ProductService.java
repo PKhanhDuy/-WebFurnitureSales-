@@ -1,12 +1,8 @@
-package com.example.ecommerce.service;
+package com.supportjobsearch.service;
 
-import com.example.ecommerce.Bean.Product;
-import com.example.ecommerce.Bean.ProductAttribute;
-import com.example.ecommerce.Common.Exception.ProductNotFoundException;
-import com.example.ecommerce.DAO.iml.ProductAttributeDao;
-import com.example.ecommerce.DAO.iml.ProductDao;
-import com.example.ecommerce.DAO.interf.IProductDTO;
-import com.example.ecommerce.Dto.ProductDto;
+import com.supportjobsearch.DAO.iml.ProductDao;
+import com.supportjobsearch.Product;
+import com.supportjobsearch.service.ServiceBase;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import org.json.JSONObject;
 

@@ -1,6 +1,6 @@
 package com.supportjobsearch.service;
 
-import com.example.ecommerce.Common.LogObj;
+import com.supportjobsearch.common.LogObj;
 
 public abstract class ServiceBase {
     protected final LogObj log = new LogObj();

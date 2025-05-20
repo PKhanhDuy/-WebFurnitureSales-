@@ -1,5 +1,7 @@
 package com.supportjobsearch.DAO.iml;
 
+import com.supportjobsearch.common.LogObj;
+import com.supportjobsearch.database.JDBIConnect;
 import org.jdbi.v3.core.ConnectionException;
 import org.jdbi.v3.core.Handle;
 

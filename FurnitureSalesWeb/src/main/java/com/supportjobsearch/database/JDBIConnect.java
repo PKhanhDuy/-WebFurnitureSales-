@@ -1,6 +1,7 @@
 package com.supportjobsearch.database;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
+import com.supportjobsearch.Bean.Order;
 import com.supportjobsearch.common.IInitializable;
 import com.supportjobsearch.common.ManagerBase;
 import org.jdbi.v3.core.Jdbi;

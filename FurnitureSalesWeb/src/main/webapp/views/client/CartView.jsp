@@ -133,7 +133,8 @@
         <div id="background-trans" hidden class="mfp-bg mfp-ready"></div>
         <div class="header-bottom-hd">
             <div class="logo-hd">
-                <a href="${pageContext.request.contextPath}/kenes"><img src="${pageContext.request.contextPath}/public/images/logos/logo3.png" alt="Logo">
+                <a href="${pageContext.request.contextPath}/kenes"><img
+                        src="${pageContext.request.contextPath}/public/images/logos/logo3.png" alt="Logo">
                 </a>
             </div>
             <nav class="main-nav">
@@ -347,8 +348,10 @@
 
                                 </div>
                             </div>
+                            <%-- 9.1.2 click nút "Đặt hàng"--%>
                             <div class="col-sm-6 col-md-6">
                                 <div class="use-button fake-btn">
+                                    <%-- 9.1.1 Gán servlet value "/order" cho nút "Đặt hàng"--%>
                                     <a href="${pageContext.request.contextPath}/order"
                                        style="color: white; text-decoration: none;">
                                         <p>Đặt hàng</p>

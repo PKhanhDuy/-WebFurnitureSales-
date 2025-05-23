@@ -1,6 +1,8 @@
 package com.supportjobsearch.DAO.iml;
 
 import com.supportjobsearch.Category;
+import com.supportjobsearch.DAO.interf.ICategoryDao;
+import com.supportjobsearch.database.JDBIConnect;
 import org.jdbi.v3.core.Jdbi;
 
 import java.util.ArrayList;

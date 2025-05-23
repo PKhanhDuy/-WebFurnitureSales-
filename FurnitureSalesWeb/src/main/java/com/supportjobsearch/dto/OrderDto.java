@@ -1,5 +1,9 @@
 package com.supportjobsearch.dto;
 
+import com.supportjobsearch.enums.Method;
+import com.supportjobsearch.enums.ShippingStatus;
+import com.supportjobsearch.enums.Statuss;
+
 import java.sql.Timestamp;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;

@@ -2,14 +2,13 @@ package com.supportjobsearch.DAO.iml;
 
 import com.supportjobsearch.Bean.Address;
 import com.supportjobsearch.Bean.OwnAddress;
-import com.supportjobsearch.User;
+import com.supportjobsearch.Bean.User;
 import com.supportjobsearch.enums.Gender;
 import com.supportjobsearch.enums.StatusUser;
 import com.supportjobsearch.DAO.interf.IOwnAddressDao;
 
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 
 public class OwnAddressDao extends ImplementBase implements IOwnAddressDao {

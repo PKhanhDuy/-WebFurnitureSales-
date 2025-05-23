@@ -1,0 +1,125 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.shipping-address, .order-summary {
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 20px 0 10px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.checkbox-label input {
+    margin-right: 5px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.payment-method button {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer;
+}
+
+.payment-method button + button {
+    /* margin-left: 4%; */
+    justify-content: center;
+    left: 0;
+    /* margin-right: auto; */
+}
+
+.order-summary .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    border-bottom: 1px solid #000;
+}
+
+.product img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.product-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.policy {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.order-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+.content-area{
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+}
+.pay-bank{
+    padding: 10px;
+}
+
+
+#abc{
+    width: 200px;
+}

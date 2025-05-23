@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>Add Product</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/admin/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/admin/add-product.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/add-product.css">
 </head>
 <body>
 <input type="checkbox" id="sidebar-toggle">

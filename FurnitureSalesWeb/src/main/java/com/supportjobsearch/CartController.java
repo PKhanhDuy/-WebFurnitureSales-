@@ -1,5 +1,6 @@
 package com.supportjobsearch;
 import com.google.gson.Gson;
+import com.supportjobsearch.Bean.User;
 import com.supportjobsearch.service.CategoryService;
 import com.supportjobsearch.service.ProductService;
 import com.supportjobsearch.service.WarehouseService;
@@ -58,7 +59,7 @@ public class CartController extends HttpServlet {
         HttpSession session = req.getSession(true);
 
         req.setAttribute("mapCate", mapCate);
-        req.getRequestDispatcher("/views/web/cart/CartView.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/client/CartView.jsp").forward(req, resp);
     }
 
 //    8.3.3. doPost() -Lấy dữ liệu của giỏ hàng và hiển thị lên-

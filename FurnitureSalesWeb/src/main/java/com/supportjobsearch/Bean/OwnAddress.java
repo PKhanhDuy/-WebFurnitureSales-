@@ -1,7 +1,5 @@
 package com.supportjobsearch.Bean;
 
-import com.supportjobsearch.User;
-
 import java.io.Serializable;
 
 public class OwnAddress implements Serializable {

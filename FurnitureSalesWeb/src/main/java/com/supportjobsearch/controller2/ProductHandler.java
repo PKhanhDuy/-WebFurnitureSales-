@@ -4,14 +4,10 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.example.ecommerce.Bean.Product;
-import com.example.ecommerce.Bean.ProductAttribute;
-import com.example.ecommerce.Bean.User;
-import com.example.ecommerce.Bean.Warehouse;
-import com.example.ecommerce.Common.Enum.Gender;
-import com.example.ecommerce.Common.Enum.RolePermission;
-import com.example.ecommerce.Common.Enum.StatusUser;
-import com.example.ecommerce.controller2.MC;
+import com.supportjobsearch.Bean.ProductAttribute;
+import com.supportjobsearch.Bean.User;
+import com.supportjobsearch.Product;
+import com.supportjobsearch.enums.RolePermission;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -69,7 +65,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
             var wh = MC.instance.warehouseService.getAllWarehouse();
             wh.forEach(System.out::println);
             request.setAttribute("wh", wh);
-            request.getRequestDispatcher("/views/admin/add-product.jsp").forward(request, response);
+            request.getRequestDispatcher("/add-product.jsp").forward(request, response);
             return;
         }
 
@@ -84,7 +80,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
         if (flag) {
             if (MC.instance.savedID == null) {
                 if (request.getParameter("id") == null) {
-                    response.sendRedirect("/admin/add-product");
+                    response.sendRedirect("/add-product");
                     return;
                 }
                 Integer id = Integer.parseInt(request.getParameter("id"));
@@ -110,7 +106,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
         request.setAttribute("cate", cate);
 
         log.info("Form is ready");
-        request.getRequestDispatcher("/views/admin/add-product.jsp")
+        request.getRequestDispatcher("/add-product.jsp")
                 .forward(request, response);
     }
 
@@ -151,10 +147,10 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
             }
             catch (NumberFormatException e) {
                 e.printStackTrace();
-                resp.sendRedirect("/admin/products");
+                resp.sendRedirect("/products");
             }
 
-            resp.sendRedirect("/admin/products");
+            resp.sendRedirect("/products");
             return;
         }
 
@@ -186,7 +182,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
                     ProductAttribute aa = MC.instance.productService.getProductAttributeByID(p.getAtributeID());
                     request.setAttribute("pa", aa);
                     request.setAttribute("CMD", "edit-product");
-                    request.getRequestDispatcher("/views/admin/add-product.jsp")
+                    request.getRequestDispatcher("/add-product.jsp")
                             .forward(request, resp);
                     return;
                 }
@@ -215,7 +211,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
                     request.setAttribute("product", p);
                     request.setAttribute("pa", a);
                     request.setAttribute("CMD", "edit-product");
-                    request.getRequestDispatcher("/views/admin/add-product.jsp")
+                    request.getRequestDispatcher("/add-product.jsp")
                             .forward(request, resp);
                     return;
                 } else {
@@ -227,7 +223,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
                     request.setAttribute("product", p);
                     request.setAttribute("pa", a);
                     request.setAttribute("CMD", "edit-product");
-                    request.getRequestDispatcher("/views/admin/add-product.jsp")
+                    request.getRequestDispatcher("/add-product.jsp")
                             .forward(request, resp);
                     return;
                 }
@@ -246,7 +242,7 @@ public class ProductHandler extends HttpServlet implements ControllerBase {
                     var cate = MC.instance.categoryService.getAllCategory();
                     request.setAttribute("cate", cate);
                     request.setAttribute("CMD", "add-product");
-                    request.getRequestDispatcher("/views/admin/add-product.jsp")
+                    request.getRequestDispatcher("/add-product.jsp")
                             .forward(request, resp);
                     return;
                 }

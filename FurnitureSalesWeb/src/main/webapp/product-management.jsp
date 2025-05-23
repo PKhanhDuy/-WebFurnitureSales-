@@ -1,10 +1,10 @@
-<%@ page import="com.example.ecommerce.Dto.OrderDto" %>
+<%@ page import="com.supportjobsearch.dto.OrderDto" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.example.ecommerce.Bean.Promotion" %>
+<%@ page import="com.supportjobsearch.Bean.Promotion" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %>
-<%@ page import="com.example.ecommerce.Common.Enum.PromotionStatus" %>
+<%@ page import="com.supportjobsearch.enums.PromotionStatus" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -16,9 +16,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/admin/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/admin/popup.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/admin/filter-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/popup.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/filter-style.css">
 </head>
 <body>
 <input type="checkbox" id="sidebar-toggle">

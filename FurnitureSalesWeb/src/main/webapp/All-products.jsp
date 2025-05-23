@@ -21,7 +21,7 @@
                     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                     crossorigin="anonymous"></script>
                 <script src="${pageContext.request.contextPath}/public/js/curtainmenu.js"></script>
-                <script src="${pageContext.request.contextPath}/public/js/Cart.js"></script>
+                <script src="${pageContext.request.contextPath}/public/js/CartJS.js"></script>
                 <title>Tất cả sản phẩm</title>
                 <style>
                     /* Kiểu thông báo */

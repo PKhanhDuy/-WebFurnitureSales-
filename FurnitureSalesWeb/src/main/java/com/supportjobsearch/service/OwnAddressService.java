@@ -24,12 +24,10 @@ public class OwnAddressService extends ServiceBase {
         }
     }
 
+    // 9.1.7 Lấy thông tin nhận hàng của user
     public List<OwnAddress> getOwnAddress(int id) {
         log.info("OwnAddressService getOwnAddress...");
         return ownAddressDao.getOwnAddress(id);
     }
 
-    public void updateOwnAddress(String fullName, String phoneNum, String princible, String fullAddress, int userId, int addressId) {
-        this.ownAddressDao.update(fullName, phoneNum, princible, fullAddress, userId, addressId);
-    }
 }

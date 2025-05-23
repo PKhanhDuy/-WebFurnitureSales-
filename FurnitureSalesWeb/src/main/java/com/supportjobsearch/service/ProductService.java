@@ -1,6 +1,8 @@
 package com.supportjobsearch.service;
 
 import com.supportjobsearch.Bean.ProductAttribute;
+import com.supportjobsearch.Bean.ProductAttribute;
+import com.supportjobsearch.DAO.iml.ProductAttributeDao;
 import com.supportjobsearch.DAO.iml.ProductDao;
 import com.supportjobsearch.DAO.iml.ProductAttributeDao;
 import com.supportjobsearch.DAO.interf.IProductDTO;

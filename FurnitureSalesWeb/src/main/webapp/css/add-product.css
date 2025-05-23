@@ -1,0 +1,118 @@
+.form-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  .left-section, .right-section {
+    padding: 10px;
+  }
+
+  /* Left section styling */
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ddd;
+  }
+  .img-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-preview {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #888;
+ }
+  .create-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .create-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Right section styling */
+  .right-section {
+    flex: 3;
+    padding-left: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="password"],
+  textarea:focus,
+  select:focus {
+    border-color: #007bff;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  /* Row styling */
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .form-container {
+      flex-direction: column;
+    }
+    .left-section {
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+    .form-row {
+      flex-direction: column;
+    }
+  }

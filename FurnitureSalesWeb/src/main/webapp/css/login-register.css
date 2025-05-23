@@ -1,0 +1,135 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}   
+#container {
+    background-image: linear-gradient(
+        to right, 
+        rgba(23, 248, 42, 0.5), 
+        rgba(121, 0, 187, 0.5)),
+        url('https://wedo.vn/wp-content/uploads/2023/03/thiet-ke-nha-2-tang-8x6m-7.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+
+}
+a {
+    font-size: 16px;
+    text-decoration: none !important;
+    padding: 5px  !important;
+    color: black  !important;
+}
+.box p{
+    margin-bottom: 5px;
+    /*margin-top: 10px;*/
+}
+.logo{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+.logobox{
+    margin-top: 40px;
+    width: 200px;
+    height:100px;
+    background-image: url("../images/logos/logo3.png");
+    background-size: cover;
+    background-position: center;
+}
+.content{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+.box{
+    background-color: white;
+    height: 80%;
+    width: 400px;
+    padding: 30px;
+    border: solid 1px black;
+    border-radius: 20px;
+    position: relative;
+}
+
+.styled-input{
+    width: 100%;
+    height: 15%;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 13px;
+    /*margin-top: 10px;*/
+    /*margin-bottom: 20px;*/
+}
+.rememberBox{
+    margin-top: 10px;
+}
+
+.loginButton{
+    position: absolute;
+    background-color: rgb(29, 168, 17);
+    color: white;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer{
+    height:15%;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.footer .subfooter{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+.content-register{ 
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+.register{
+    height: 310px;
+}
+.register-button{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: rgb(29, 168, 17);
+    color: white;
+    bottom: 20px;
+    left: 40%;
+    text-align: center;
+    border-radius: 5px;
+    width: 100px;
+    height: 32px;
+}
+.register-button a{
+    color: white !important;
+}
+.footer-register{
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.footer-left{
+    float: left;
+    width: 35%;
+}
+.footer-right{
+    float: right;
+    text-align: right;
+    width: 65%;
+}

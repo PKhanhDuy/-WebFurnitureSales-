@@ -21,6 +21,10 @@ public class Cart {
         data.put(p.getId(), p);
         return true;
     }
+    //Lay ra danh sach cac san pham co trong gio hang
+    public List<CartItem> getList(){
+        return new ArrayList<CartItem>(data.values());
+    }
 
 //    8.3.8. updateQuantity() -cập nhật lại số lượng trong CartItem-
     public boolean update(int id, int quantity){

@@ -1,5 +1,9 @@
 package com.supportjobsearch;
 import com.google.gson.Gson;
+import com.supportjobsearch.Bean.User;
+import com.supportjobsearch.service.CategoryService;
+import com.supportjobsearch.service.ProductService;
+import com.supportjobsearch.service.WarehouseService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,8 +23,8 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Lay du lieu category de hien thi len giao dien
-
-        CategoryService cateService = new CategoryService();
+        ProductService service = ProductService.getInstance();
+        CategoryService cateService = CategoryService.getInstance();
 
         List<Product> data;
         List<Category> categories;
@@ -55,7 +59,7 @@ public class CartController extends HttpServlet {
         HttpSession session = req.getSession(true);
 
         req.setAttribute("mapCate", mapCate);
-        req.getRequestDispatcher("/views/web/cart/CartView.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/client/CartView.jsp").forward(req, resp);
     }
 
 //    8.3.3. doPost() -Lấy dữ liệu của giỏ hàng và hiển thị lên-

@@ -63,7 +63,7 @@ public class SearchController extends HttpServlet {
             req.setAttribute("mapCate", mapCate);
             req.setAttribute("searchKeyword", keyword); // Giữ lại từ khóa
             // Bước 6.6: Hiển thị kết quả
-            req.getRequestDispatcher("/views/web/product/search-products.jsp").forward(req, resp);
+            req.getRequestDispatcher("/search-products.jsp").forward(req, resp);
             
         } catch (Exception e) {
             // Bước 8: Xử lý ngoại lệ nếu có lỗi

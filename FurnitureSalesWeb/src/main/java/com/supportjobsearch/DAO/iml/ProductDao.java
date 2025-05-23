@@ -3,6 +3,7 @@ package com.supportjobsearch.DAO.iml;
 
 import com.supportjobsearch.DAO.interf.IProductDAO;
 import com.supportjobsearch.Product;
+import com.supportjobsearch.database.JDBIConnect;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.ResultSet;
@@ -108,10 +109,10 @@ public class ProductDao extends ImplementBase implements IProductDAO {
                         .mapToBean(Product.class).list());
     }
 
-    @Override
-    public List<Product> getProductByFilter(ProductFilter filter) {
-        return List.of();
-    }
+//    @Override
+//    public List<Product> getProductByFilter(ProductFilter filter) {
+//        return List.of();
+//    }
 
     public List<Product> get4ProductOfCate(int cateID) {
         return db.jdbi.withHandle(handle -> handle.createQuery("select * from products where cateID = :cateID limit 4")
@@ -148,7 +149,7 @@ public class ProductDao extends ImplementBase implements IProductDAO {
     }
 
     @Override
-    public Product getProductByName(String productName) throws ProductNotFoundException {
+    public Product getProductByName(String productName) throws Exception {
         log.info("Querying product by name: " + productName);
         Product p = null;
 
@@ -158,7 +159,7 @@ public class ProductDao extends ImplementBase implements IProductDAO {
                     .mapToBean(Product.class).first();
         }
         catch (IllegalStateException e) {
-            throw new ProductNotFoundException("Product not exits");
+            throw new Exception("Product not exits");
         }
 
         return p;

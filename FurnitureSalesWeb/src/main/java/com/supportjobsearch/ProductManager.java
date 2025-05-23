@@ -1,16 +1,17 @@
-package com.example.ecommerce.controller2.adm;
+package com.supportjobsearch;
 
 import java.io.*;
 
-import com.example.ecommerce.Bean.User;
-import com.example.ecommerce.Common.Enum.RolePermission;
-import com.example.ecommerce.controller2.MC;
+import com.supportjobsearch.Bean.User;
+import com.supportjobsearch.controller2.ControllerBase;
+import com.supportjobsearch.controller2.MC;
+import com.supportjobsearch.enums.RolePermission;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "ProductManagerServlet", value = "/admin/products")
-public class ProductManager extends HttpServlet implements ControllerBase{
+public class ProductManager extends HttpServlet implements ControllerBase {
     public void init() {
         initialize();
     }
@@ -43,7 +44,7 @@ public class ProductManager extends HttpServlet implements ControllerBase{
             request.setAttribute("role", RolePermission.REPORTS_MANAGEMENT);
         request.setAttribute("CMD", "products");
 
-        request.getRequestDispatcher("/views/admin/product-management.jsp").forward(request, response);
+        request.getRequestDispatcher("/product-management.jsp").forward(request, response);
     }
 
     public void destroy() {

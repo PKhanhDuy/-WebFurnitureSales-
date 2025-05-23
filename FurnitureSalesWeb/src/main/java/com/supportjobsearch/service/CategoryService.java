@@ -2,8 +2,8 @@ package com.supportjobsearch.service;
 
 import com.supportjobsearch.Category;
 import com.supportjobsearch.DAO.iml.CategoryDao;
-import com.supportjobsearch.ICategoryDTO;
-import com.supportjobsearch.CategoryDto;
+import com.supportjobsearch.DAO.interf.ICategoryDTO;
+import com.supportjobsearch.dto.CategoryDto;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 
 import java.util.List;

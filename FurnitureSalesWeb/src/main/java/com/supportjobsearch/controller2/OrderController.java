@@ -3,13 +3,12 @@ package com.supportjobsearch.controller2;
 import com.supportjobsearch.Bean.Order;
 import com.supportjobsearch.Bean.OrderItem;
 import com.supportjobsearch.Bean.OwnAddress;
+import com.supportjobsearch.Bean.User;
 import com.supportjobsearch.Cart;
 import com.supportjobsearch.CartItem;
-import com.supportjobsearch.Location.LocationData;
 import com.supportjobsearch.service.OrderItemService;
 import com.supportjobsearch.service.OrderService;
 import com.supportjobsearch.service.OwnAddressService;
-import com.supportjobsearch.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -58,7 +57,7 @@ public class OrderController extends HttpServlet {
                 req.setAttribute("order", order);
                 req.setAttribute("address", address);
                 // 9.1.9 Hiển thị trang order
-                req.getRequestDispatcher("/views/web/order/order.jsp").forward(req, resp);
+                req.getRequestDispatcher("/order.jsp").forward(req, resp);
             } else {
                 // 9.3.5 Chuyển sang trang login
                 resp.sendRedirect("/login");

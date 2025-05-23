@@ -1,8 +1,8 @@
-package com.supportjobsearch;
+package com.supportjobsearch.Bean;
+
 
 import com.supportjobsearch.enums.Gender;
 import com.supportjobsearch.enums.StatusUser;
-import com.supportjobsearch.InsertData;
 
 import java.io.Serializable;
 import java.sql.Connection;
@@ -20,6 +20,7 @@ public class User implements Serializable {
     private StatusUser statusUser;
     private LocalDateTime createUser;
     private String avatar;
+    private String public_key;
     private int roleID;
 
     public User() {
@@ -38,7 +39,7 @@ public class User implements Serializable {
         this.avatar = avatar;
         this.roleID = roleID;
     }
-    public User(String username, String pass, String email){
+    public  User(String username, String pass, String email){
         this.username = username;
         this.pass = pass;
         this.email = email;
@@ -153,6 +154,14 @@ public class User implements Serializable {
         this.roleID = roleID;
     }
 
+    public String getPublic_key() {
+        return public_key;
+    }
+
+    public void setPublic_key(String public_key) {
+        this.public_key = public_key;
+    }
+
     @Override
     public String toString() {
         return "User {id=" + id +
@@ -169,25 +178,25 @@ public class User implements Serializable {
     }
 
     public static void main(String[] args) {
-        String username = "4";
-        String fullname = "the empty";
-        String gender = "male";
-        String email = "empty@gmail.com";
-        String phone = "0933718070";
-        String pass = "4";
-        String statusUser = "enable";
-        String createDate = "2025-12-11 10:00:00";
-        String avatar = "avatar1.png";
-        int role = 4;
-
-        String url = "jdbc:mysql://127.0.0.1:3306/ltw?useUnicode=true&characterEncoding=utf-8";
-        String user = "root";
-        String password = "";
-
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
-            InsertData.insertUsers(conn, username, fullname, gender, pass, email, phone, statusUser, createDate, avatar, role);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        String username = "4";
+//        String fullname = "the empty";
+//        String gender = "male";
+//        String email = "empty@gmail.com";
+//        String phone = "0933718070";
+//        String pass = "4";
+//        String statusUser = "enable";
+//        String createDate = "2025-12-11 10:00:00";
+//        String avatar = "avatar1.png";
+//        int role = 4;
+//
+//        String url = "jdbc:mysql://127.0.0.1:3306/ltw?useUnicode=true&characterEncoding=utf-8";
+//        String user = "root";
+//        String password = "";
+//
+//        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+//            InsertData.insertUsers(conn, username, fullname, gender, pass, email, phone, statusUser, createDate, avatar, role);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

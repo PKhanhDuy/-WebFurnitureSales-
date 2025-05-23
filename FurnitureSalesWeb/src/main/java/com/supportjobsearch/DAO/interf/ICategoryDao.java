@@ -1,6 +1,7 @@
 package com.supportjobsearch.DAO.interf;
 
-import com.example.ecommerce.Bean.Category;
+
+import com.supportjobsearch.Category;
 
 import java.util.List;
 

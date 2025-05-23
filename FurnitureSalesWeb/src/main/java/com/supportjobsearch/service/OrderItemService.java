@@ -17,23 +17,10 @@ public class OrderItemService extends ServiceBase {
         }
     }
 
-    public List<OrderItem> getOrderItem(int id) {
-        log.info("getOrderItem...");
-        return dao.getOrderItem(id);
-    }
-
+    // 9.1.6 Thêm thông tin sản phẩm vào đơn hàng
     public OrderItem addOrderItem(OrderItem orderItem) {
         log.info("addOrderItem...");
         return dao.addOrderItem(orderItem);
     }
 
-    public void updateOrderItem(int id, int productID, int amount) {
-        log.info("update orderitem...");
-        this.dao.updateOrderItem(id, productID, amount);
-    }
-
-    public OrderItem findOrderItemByProductId(OrderItem orderItem) {
-        log.info("find orderitem...");
-        return this.dao.findByOrderAndProduct(orderItem);
-    }
 }

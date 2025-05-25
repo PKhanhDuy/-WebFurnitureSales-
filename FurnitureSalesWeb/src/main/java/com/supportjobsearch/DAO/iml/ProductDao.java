@@ -93,7 +93,13 @@ public class ProductDao extends ImplementBase implements IProductDAO {
                 .bind("name", "%" + name + "%")
                 .mapToBean(Product.class).list();
     }
-
+    // 6.1.7 ProductDao thực hiện truy vấn SQL xuống database lấy danh sách sản phẩm phù hợp
+    @Override
+    public List<Product> searchProduct(String name) {
+        return db.getJdbi().withHandle(handle1 -> handle.createQuery("SELECT * FROM products WHERE proName LIKE :name")
+                .bind("name", "%" + name + "%")
+                .mapToBean(Product.class).list());
+    }
 
     @Override
     public List<Product> get4NewProducts() {

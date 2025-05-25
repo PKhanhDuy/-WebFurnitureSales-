@@ -72,10 +72,7 @@ public class ProductService extends ServiceBase {
     public List<Product> getSearch(String name) {
         return productDao.search(name);
     }
-    // 6.1.6 ProductService gọi tới ProductDao yêu cầu ProductDao truy vấn tìm kiếm sản phẩm
-    public List<Product> getSearchProduct(String name) {
-        return productDao.searchProduct(name);
-    }
+
 
     public List<ProductDto> getAllProductsDto() {
         try {

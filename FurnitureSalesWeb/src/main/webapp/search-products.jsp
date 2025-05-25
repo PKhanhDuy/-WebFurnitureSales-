@@ -278,6 +278,9 @@
     <div id="p-product">
         <div class="container mt-5">
             <div class="product-area row">
+                <%-- 6.1.10 search-product.jsp hiển thị kết quả tìm kiếm cho người dùng --%>
+                <%-- 6.2.10: khi danh sách sản phẩm rỗng, vòng lặp không chạy,
+                trang kết quả không hiển thị bất kỳ sản phẩm nào --%>
                 <c:forEach var="p" items="${products}">
                     <div class="col-md-3">
                         <div class="card product-card product" data-id="${p.id}" data-name="${p.proName}"

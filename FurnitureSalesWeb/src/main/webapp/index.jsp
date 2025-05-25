@@ -161,7 +161,18 @@
                 <a style="margin-top: 5px;" href="#">BỘ SƯU TẬP</a>
 
             </nav>
-
+            <%-- 6.1.1 Người dùng truy cập trang chủ (index.jsp) --%>
+            <%-- 6.1.2 Người dùng nhập từ khóa tìm kiếm vào ô tìm kiếm ở trang chủ --%>
+            <form action="/search" method="get">
+                <div class="search-bar-hd">
+                    <input id="search-input" name="search-input" type="text" placeholder="Tìm sản phẩm">
+                    <%-- 6.1.3 Người dùng nhấn nút Tìm kiếm (icon kính lúp), form sẽ submit GET request đến
+                    SearchController với tham số search-input --%>
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
             <script>
                 function getValue() {
                     const searchInput = document.getElementById("search-input");

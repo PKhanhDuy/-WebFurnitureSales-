@@ -278,51 +278,7 @@
     <div id="p-product">
         <div class="container mt-5">
             <div class="product-area row">
-                <%-- 6.1.10 search-product.jsp hiển thị kết quả tìm kiếm cho người dùng --%>
-                <%-- 6.2.10: khi danh sách sản phẩm rỗng, vòng lặp không chạy,
-                trang kết quả không hiển thị bất kỳ sản phẩm nào --%>
-                <c:forEach var="p" items="${products}">
-                    <div class="col-md-3">
-                        <div class="card product-card product" data-id="${p.id}" data-name="${p.proName}"
-                             data-img="${p.thumb}" data-price="${p.price}">
-                            <a href="product?id=${p.id}&atributeID=${p.atributeID}&cateID=${p.cateID}">
-                                <img src="${p.thumb}" class="image-top"
-                                     alt="${p.proName}">
-                                <img src="${p.thumb}" class="image-back"
-                                     alt="${p.proName}">
-                            </a>
-                            <div class="card-body">
-                                <h6 class="product-name">${p.proName}</h6>
-                                <div class="like-price-product">
-                                        <span class="product-price"><f:formatNumber type="currency" currencySymbol="đ"
-                                                                                    value="${p.price}"/></span>
-                                    <button class="wishlist-button">
-                                        <i class="bi bi-heart"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="cart-see-more-btns">
-                                <div class="row">
-                                    <div class="col-sm-7 col-md-7">
-                                        <div class="cart-btn use-button fake-btn" style="border: none">
-                                            <button class="add-to-cart"
-                                                    style="font-size: 11px; font-weight: bold;padding: 10px 5px">
-                                                THÊM VÀO GIỎ
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5 col-md-5">
-                                        <div class="use-button fake-btn">
-                                            <a href="javascript:void(0);"
-                                               onclick="showProductDetails(${p.id}, ${p.atributeID}, ${p.cateID})">
-                                                <p>XEM THÊM</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
+
             </div>
         </div>
     </div>
